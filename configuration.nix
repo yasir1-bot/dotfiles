@@ -93,11 +93,10 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "26.05"; # Did you read the comment?
 
-
+  services.displayManager.ly.enable = true;
   services.xserver.enable = true;
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
-  programs.hyprland.enable = false;
   programs.firefox.enable = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -115,35 +114,26 @@
 #  git.enable = true;
 
   environment.systemPackages = with pkgs ; [
-   flatpak
-   mpv
-   git
-   wget
-   curl
-   bluez
-   bluez-tools
-   blueman
-   neovim
-   fastfetch
-   tmux
-   niri
-   kitty
-   xorg-server
-   pkgs.nerd-fonts.jetbrains-mono
-   pywal16
-   fish
-   ntfs3g
-   pywalfox-native
-   noctalia-qs
-   noctalia-shell
-   vscodium
-   cava
-   pokemon-colorscripts
-   kdePackages.breeze
-   nautilus
-   gnome-boxes
-   musikcube
-   mpd
+    git
+    wget
+    curl
+    fish
+    bluez
+    bluez-tools
+    neovim
+    fastfetch
+    tmux
+    niri
+    kitty
+    xorg-server
+    pkgs.nerd-fonts.jetbrains-mono
+    ntfs3g
+    noctalia-qs
+    noctalia-shell
+    vscodium
+    pokemon-colorscripts
+    kdePackages.breeze
+    nautilus
   ];
 
  fonts.packages = with pkgs; [
