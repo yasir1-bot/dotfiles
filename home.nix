@@ -41,9 +41,17 @@
 };
 
   home.packages = with pkgs; [
-    eza
-    mpd
-    btop
+    flatpak
     mpv
+    mpd
+    cava
+    btop
+    cmatrix
+    cbonsai
+    tty-clock
+    pywal16
+    pywalfox-native
+    musikcube
+    gnome-boxes
   ];
 }
