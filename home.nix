@@ -8,13 +8,8 @@
   home.file.".config/niri".source = ./niri;
   
   programs.fish.enable = true;
-  programs.mpd.enable = true;
-###  programs.git.enable = true;
+  services.mpd.enable = true;
 
-  programs.git = {
-    userEmail = "yasir.ahmed10113@gmail.com";
-    userName = "yasir1-bot";
-  };
 
   programs.fish = {
     interactiveShellInit = ''
