@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/yasir";
 
   home.stateVersion = "26.05";
-  home.file.".config/niri".source = ./niri;
+  home.file.".config/niri".source = ./config/niri;
   
   programs.fish.enable = true;
   services.mpd.enable = true;
@@ -41,10 +41,9 @@
 };
 
   home.packages = with pkgs; [
-    fastfetch
     eza
-    niri
-    fish
     mpd
+    btop
+    mpv
   ];
 }

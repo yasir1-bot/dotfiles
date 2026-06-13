@@ -115,10 +115,8 @@
 #  git.enable = true;
 
   environment.systemPackages = with pkgs ; [
-   yt-dlp
    flatpak
    mpv
-   notes
    git
    wget
    curl
@@ -127,11 +125,9 @@
    blueman
    neovim
    fastfetch
-   btop
    tmux
    niri
    kitty
-   alacritty
    xorg-server
    pkgs.nerd-fonts.jetbrains-mono
    pywal16
@@ -144,11 +140,9 @@
    cava
    pokemon-colorscripts
    kdePackages.breeze
-   gnome-usage
    nautilus
    gnome-boxes
    musikcube
-   rmpc
    mpd
   ];
 
@@ -157,8 +151,6 @@
    inter
    # etc
 ];
-
-
 
 }
 
