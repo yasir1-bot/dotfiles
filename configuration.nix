@@ -97,7 +97,7 @@
   services.xserver.enable = true;
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
-  programs.hyprland.enable = true;
+  programs.hyprland.enable = false;
   programs.firefox.enable = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -106,6 +106,7 @@
   services.gvfs.enable = true;
   services.tumbler.enable = true;
   services.dbus.enable = true;
+  services.flatpak.enable = true;
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -114,6 +115,10 @@
 #  git.enable = true;
 
   environment.systemPackages = with pkgs ; [
+   yt-dlp
+   flatpak
+   mpv
+   notes
    git
    wget
    curl
@@ -128,13 +133,8 @@
    kitty
    alacritty
    xorg-server
-   rofi
-   awww
    pkgs.nerd-fonts.jetbrains-mono
    pywal16
-   thunar
-   thunar-archive-plugin
-   thunar-volman
    fish
    ntfs3g
    pywalfox-native
@@ -147,10 +147,9 @@
    gnome-usage
    nautilus
    gnome-boxes
-   gnome-notes
    musikcube
-   gnome-clocks
-   gnome-2048
+   rmpc
+   mpd
   ];
 
  fonts.packages = with pkgs; [
@@ -162,3 +161,5 @@
 
 
 }
+
+
