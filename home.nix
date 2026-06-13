@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, noctalia, ... }:
 
 {
   home.username = "yasir";
@@ -54,4 +54,6 @@
     musikcube
     gnome-boxes
   ];
+
+  imports = [ ./config/noctalia.nix ];
 }

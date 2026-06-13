@@ -1,0 +1,21 @@
+[config]
+
+[templates]
+
+# User-defined templates
+# Add your custom templates below
+# Example:
+# [templates.fuckyou]
+# input_path = "~/.config/noctalia/templates/myapp.css"
+# output_path = "~/.config/myapp/theme.css"
+# post_hook = "myapp --reload-theme"
+
+# Remove this section and add your own templates
+#[templates.placeholder]
+#input_path = "/nix/store/xqjhgfb7cl2gidv3b4nnlbsvqgzam56a-noctalia-shell-2026-06-07_5311e14/share/noctalia-shell/Assets/Templates/noctalia.json"
+#output_path = "/home/yasir/.cache/noctalia/placeholder.json"
+
+[templates.niri]
+input_path = '~/.config/noctalia/templates/niri-colors.kdl'
+output_path = '~/dotfiles/config/niri/noctalia.kdl'
+post_hook = 'niri msg action load-config-file'

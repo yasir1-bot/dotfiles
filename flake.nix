@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }: {
+  outputs = { nixpkgs, home-manager, noctalia, ... }: {
     nixosConfigurations.nixos-btw =
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -28,6 +28,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit noctalia; };
             home-manager.users.yasir = import ./home.nix;
           }
         ];
