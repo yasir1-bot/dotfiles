@@ -1,4 +1,4 @@
-{ pkgs, noctalia, ... }:
+{ pkgs, ... }:
 
 {
   home.username = "yasir";
@@ -6,20 +6,18 @@
 
   home.stateVersion = "26.05";
   home.file.".config/niri".source = ./config/niri;
+  home.file.".config/noctalia".source = ./config/noctalia;
   
-  programs.fish.enable = true;
   services.mpd.enable = true;
-
   services.mpd.musicDirectory = "~/Music/Playlist";
-
   services.mpd.extraConfig = ''
-    audio_output {
+    audio_output { 
       type "pipewire"
       name "PipeWire"
-  }
-'';
+    }
+  '';
 
-
+  programs.fish.enable = true;
   programs.fish = {
     interactiveShellInit = ''
     fastfetch
@@ -55,5 +53,4 @@
     gnome-boxes
   ];
 
-  imports = [ ./config/noctalia.nix ];
 }
