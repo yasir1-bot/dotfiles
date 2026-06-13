@@ -53,6 +53,8 @@
     musikcube
     gnome-boxes
     gnome-tweaks
+    virtualbox
+    xwayland-satellite
   ];
 
 }

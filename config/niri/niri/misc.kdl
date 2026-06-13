@@ -1,4 +1,5 @@
 spawn-at-startup "noctalia-shell"  // to start noctalia-shell at startup
+spawn-at-startup "xwayland-satellite"
 hotkey-overlay { skip-at-startup; }  // to get rid of hotkeys at startup
 prefer-no-csd  // to remove top bar in some applications
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"  // screenshot path

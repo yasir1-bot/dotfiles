@@ -93,9 +93,10 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "26.05"; # Did you read the comment?
 
-  services.displayManager.ly.enable = true;
+  services.displayManager.ly.enable = false;
   services.xserver.displayManager.lightdm.enable = false;
   services.xserver.enable = true;
+  programs.xwayland.enable = true;
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
   programs.firefox.enable = true;
