@@ -7,7 +7,7 @@
 ### What this aims to be:
 - a reproducible niri setup configuration that primarily uses [`noctalia-shell`](https://github.com/noctalia-dev/noctalia)
   
-[](assets/setup1.png)
+![](assets/setup1.png)
   
 ### Usage:
 ``` fish
