@@ -10,6 +10,15 @@
   programs.fish.enable = true;
   services.mpd.enable = true;
 
+  services.mpd.musicDirectory = "~/Music/Playlist";
+
+  services.mpd.extraConfig = ''
+    audio_output {
+      type "pipewire"
+      name "PipeWire"
+  }
+'';
+
 
   programs.fish = {
     interactiveShellInit = ''
