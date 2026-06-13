@@ -42,6 +42,7 @@
     flatpak
     mpv
     mpd
+    ani-cli
     cava
     btop
     cmatrix
@@ -51,6 +52,7 @@
     pywalfox-native
     musikcube
     gnome-boxes
+    gnome-tweaks
   ];
 
 }
