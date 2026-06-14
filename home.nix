@@ -27,7 +27,7 @@
     gnome-boxes
     gnome-tweaks
     virtualbox
-    virtualbox-modules
+    linuxKernel.packages.linux_5_10.virtualbox
     xwayland-satellite
     eza
     pokemon-colorscripts

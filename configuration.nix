@@ -75,6 +75,9 @@
   services.dbus.enable                  = true;
   services.flatpak.enable               = true;
 
+  # ── Virtualisation ────────────────────────────────────────────────────────
+  virtualisation.virtualbox.host.enable = true;
+
   # ── Fonts ─────────────────────────────────────────────────────────────────
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
