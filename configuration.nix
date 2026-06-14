@@ -3,7 +3,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./noctalia/system.nix   # noctalia system-level deps
   ];
 
   # ── Boot ──────────────────────────────────────────────────────────────────
@@ -95,6 +94,7 @@
     neovim
     fastfetch
     tmux
+    quickshell
     niri
     kitty
     xwayland-satellite
@@ -103,6 +103,7 @@
     vscodium
     kdePackages.breeze
     nautilus
+    dank-material-shell
   ];
 
   # ── Nix ───────────────────────────────────────────────────────────────────

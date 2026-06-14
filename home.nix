@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./niri/home.nix       # niri window manager config
-    ./noctalia/home.nix   # noctalia shell config
+    ./config/niri/home.nix       # niri window manager config
   ];
 
   home.username    = "yasir";
