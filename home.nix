@@ -1,43 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  home.username = "yasir";
+  imports = [
+    ./niri/home.nix       # niri window manager config
+    ./noctalia/home.nix   # noctalia shell config
+  ];
+
+  home.username    = "yasir";
   home.homeDirectory = "/home/yasir";
+  home.stateVersion  = "26.05";
 
-  home.stateVersion = "26.05";
-  home.file.".config/niri".source = ./config/niri;
-  home.file.".config/noctalia".source = ./config/noctalia;
-  
-  services.mpd.enable = true;
-  services.mpd.musicDirectory = "~/Music/Playlist";
-  services.mpd.extraConfig = ''
-    audio_output { 
-      type "pipewire"
-      name "PipeWire"
-    }
-  '';
-
-  programs.fish.enable = true;
-  programs.fish = {
-    interactiveShellInit = ''
-    fastfetch
-    set -g fish_greeting
-    set -gx EDITOR nvim
-    set -gx SUDO_EDITOR $EDITOR
-    set -gx VISUAL nvim
-    set -gx TERMINAL kitty
-    set -gx MANPAGER "nvim +Man!"
-  '';
-  
-
-  shellAliases = {
-    ll = "eza -la";
-    n = "nvim";
-    rip = "yt-dlp -x --audio-format=\"mp3\"";
-    c = "codium .";
-  };
-};
-
+  # ── Packages ──────────────────────────────────────────────────────────────
   home.packages = with pkgs; [
     flatpak
     mpv
@@ -55,6 +28,39 @@
     gnome-tweaks
     virtualbox
     xwayland-satellite
+    eza
+    pokemon-colorscripts
   ];
 
+  # ── Fish Shell ────────────────────────────────────────────────────────────
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      fastfetch
+      set -g fish_greeting
+      set -gx EDITOR nvim
+      set -gx SUDO_EDITOR nvim
+      set -gx VISUAL nvim
+      set -gx TERMINAL kitty
+      set -gx MANPAGER "nvim +Man!"
+    '';
+    shellAliases = {
+      ll  = "eza -la";
+      n   = "nvim";
+      rip = ''yt-dlp -x --audio-format="mp3"'';
+      c   = "codium .";
+    };
+  };
+
+  # ── MPD ───────────────────────────────────────────────────────────────────
+  services.mpd = {
+    enable         = true;
+    musicDirectory = "~/Music/Playlist";
+    extraConfig    = ''
+      audio_output {
+        type "pipewire"
+        name "PipeWire"
+      }
+    '';
+  };
 }

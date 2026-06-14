@@ -9,6 +9,6 @@ include "/home/yasir/dotfiles/config/niri/niri/input.kdl"
 include "/home/yasir/dotfiles/config/niri/niri/layout.kdl"
 include "/home/yasir/dotfiles/config/niri/niri/misc.kdl"
 include "/home/yasir/dotfiles/config/niri/niri/window-rules.kdl"
-include "/home/yasir/dotfiles/config/niri/noctalia.kdl"
+// include "/home/yasir/dotifles/config/niri/noctalia.kdl"
 
 

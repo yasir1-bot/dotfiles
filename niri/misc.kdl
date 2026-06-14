@@ -1,0 +1,12 @@
+// Miscellaneous top-level settings
+
+spawn-at-startup "noctalia-shell"
+spawn-at-startup "xwayland-satellite"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
