@@ -1,23 +1,6 @@
 # ---------------------------------------------------------------------------
 # Hyprland configuration (Home Manager).
-#
-# modules/hyprland.nix (system side) handles session registration and
-# portals; this file is the *actual* Hyprland config: monitors, input,
-# keybinds, window rules, and the Noctalia-specific tweaks recommended at
-# docs.noctalia.dev/v5/compositor-settings/hyprland/.
-#
-# A note on `configType`, since it's the one genuinely "in flux" part of
-# this file: Hyprland 0.55 (May 2026) introduced a new Lua config format
-# (`hyprland.lua`), and Home Manager can now generate either that or the
-# classic `hyprland.conf` ("hyprlang") from the `settings` attrset below via
-# `configType`. As of writing, Home Manager's attrset -> Lua generator has
-# open, unresolved bugs with `$variable` substitution and `exec-once`
-# (nix-community/home-manager issues #9468 and #9341) -- and because
-# `home.stateVersion` here is already "26.05", Home Manager would pick
-# `configType = "lua"` *by default* if we didn't pin it. So: pinned to
-# "hyprlang" below on purpose, not out of habit. Hyprland happily keeps
-# loading a plain hyprland.conf when no hyprland.lua is present, so nothing
-# is lost -- flip this back to "lua" once those issues are closed upstream.
+# ---------------------------------------------------------------------------
 { pkgs, ... }:
 
 {
@@ -125,31 +108,13 @@
       # Window rules
       # -----------------------------------------------------------------
       windowrule = [
-        # Firefox Picture-in-Picture: float it, pin it so it stays visible
-        # across every workspace ("follows you around"), and park it in
-        # the bottom-right corner at a sensible size. Firefox always names
-        # the PiP popup's *title* "Picture-in-Picture" -- its window class
-        # stays "firefox" like every other Firefox window, so we have to
-        # match on title, not class.
         "float true, pin true, size 25% 25%, move 73% 72%, match:title ^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$"
-
-        # Spotify (see the $mod+M bind below): silently assign it straight
-        # to its own special workspace the moment it opens, rather than
-        # letting it land on whatever workspace you're currently on.
-        # Matches both the class flatpak Spotify typically reports.
         "workspace special:spotify silent, match:class ^(Spotify|com\\.spotify\\.Client)$"
       ];
 
       # -----------------------------------------------------------------
       # Noctalia integration: stop Hyprland's own layer-surface animations
       # from fighting with Noctalia's bar/panels/dock/OSD, and blur them.
-      #
-      # NOTE: Hyprland reworked layer/window rule syntax in 0.53 (Dec 2025)
-      # -- the old bare `layerrule = blur, ^(regex)$` form (which this file
-      # originally shipped with, and which is still floating around in a
-      # lot of older dotfiles/tutorials) now errors with "invalid field
-      # ...: missing a value". Each effect needs an explicit value, and the
-      # namespace match moves into an explicit `match:namespace` clause:
       # -----------------------------------------------------------------
       layerrule = [
         "no_anim true, match:namespace ^(noctalia-(bar-.+|notification|dock|panel|attached-panel|osd))$"
@@ -159,13 +124,6 @@
 
       # -----------------------------------------------------------------
       # Keybinds
-      #
-      # Mnemonics are Windows/Mac-flavoured where a sensible parallel
-      # exists (Win+E file manager, Win+L lock, Win+R run, Alt+Tab window
-      # switcher, Ctrl+Alt+Del -> a system/power menu, Win+Shift+S region
-      # screenshot), and otherwise picked so the letter reads as the
-      # action: W = "Wallpaper" (random), Ctrl+W = "Control Wallpaper"
-      # (picker menu), B = "Bar", M = "Music".
       # -----------------------------------------------------------------
       bind =
         [
