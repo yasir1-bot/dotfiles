@@ -12,7 +12,8 @@
 
     shellAliases = {
     n = "nvim";
-    nrs = "sudo nixos-rebuild switch --flake /home/yasir/dotfiles/#nixos-btw --show-trace";
+    update = "sudo nixos-rebuild switch --flake /home/yasir/dotfiles#nixos-btw --show-trace";
+    cleanup = "sudo nix-collect-garbage -d";
    };
 
   };
