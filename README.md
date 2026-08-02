@@ -1,9 +1,9 @@
 # dotfiles for NixOS
 #### pros of using these:
-- (nearly) everything is written in nix
+- ~~(nearly)~~ everything is written in nix
 
 #### cons of using these:
-- (nearly) everything is written in nix
+- ~~(nearly)~~ everything is written in nix
 - very "vibe coded"
 
 ### some other things i've made:
