@@ -6,8 +6,8 @@
 
     interactiveShellInit = ''
       set fish_greeting
-
       nitch
+      starship init fish | source
     '';
 
     shellAliases = {

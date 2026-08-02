@@ -33,7 +33,7 @@
 
     "org/gnome/desktop/background" = {
       picture-uri = "file:///home/yasir/Pictures/Wallpapers/clouds.jpg";
-      picture-uri-dark = "file:///home/yasir/Pictures/Wallpapers/den.jpg";
+      picture-uri-dark = "file:///home/yasir/Pictures/Wallpapers/gruvbox/117497448_p0.jpg";
      };
      
     "org/gnome/shell" = {
@@ -43,6 +43,7 @@
         "caffeine@patapon.info"
         "just-perfection-desktop@just-perfection"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
+	"pip-on-top@rafostar.github.com"
       ];
    };
   };
