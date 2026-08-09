@@ -10,5 +10,6 @@
     ./hyprland.nix
     ./noctalia.nix
     ./gnome.nix
+    ./cursor.nix
   ];
 }
