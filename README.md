@@ -15,3 +15,4 @@ _[place holder for things i might make in the future, if i do :3]_
 - [ ] clean up file structure
 - [ ] clean up comments
 - [ ] other stuff
+- [ ] add a quickshell configuration that's not noctalia
